@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul ol>li {
+            color: red;
+        }
+         ul>li:nth-of-type(4n){
+            color: green;
+         }
+
+         a[href*="google"]{
+            color: yellow;
+         }
+
+         p::first-letter {
+            font-size: 48px;
+         }
+    </style>
+</head>
+<body>
+    <ul class="main_wrapper">
+        <li class="main_wrapper__item">Lorem, ipsum dolor.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <ol>
+            <li>Lorem, ipsum.</li>
+            <li>Lorem, ipsum.</li>
+            <ol>
+                <li>I AM NEW</li>
+            </ol>
+            <li>Lorem, ipsum.</li>
+        </ol>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <ol>
+            <li>I am second</li>
+        </ol>
+    </ul>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dicta!</p>
+    <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+    </ul>
+    <p>Lorem, ipsum.</p>
+    <p>Lorem, ipsum.</p>
+    <div>
+        <p>Lorem, ipsum.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    
+
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam velit sed id perspiciatis adipisci quas hic tempore illo sequi! Vitae velit officiis repellendus commodi quasi atque nisi officia eius non?
+
+    <a href="https://www.google.com" target="_blank">Google</a>
+    <a href="https://www.youtube.com" target="_blank">youtube</a>
+    
+</body>
+</html>

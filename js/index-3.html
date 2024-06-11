@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array & Object</title>
+</head>
+
+<body>
+
+    <script>
+        let i = 3;
+        const arr = ["Alice", "Tom", "Lisa", "Mark", "Katya"];
+        console.log(arr);
+        console.log(arr.length);
+        console.log(arr[i]);
+        console.log(arr[2]);
+
+        console.log(arr[0]);
+        console.log(arr[arr.length - 1]);
+
+        const arr1 = [];
+        console.log(arr1.length);
+
+        arr[0] = "Vasya"
+        arr[8] = "Mariana"
+        arr[arr.length] = "Vova"
+
+        // console.log(arr);
+
+        arr.push("Ann");
+        arr.unshift("Ann2");
+
+        arr.pop()
+        arr.shift()
+
+        console.log(arr);
+        console.log(arr.unshift("Ann2")); // 11
+
+        const newArr = [1, 2, 3, [4, 5, 6]];
+        const lastEl = newArr[newArr.length - 1];
+
+        console.log(lastEl[lastEl.length - 1]);
+
+
+        // Objects
+
+        const keyT = "gender";
+
+        const person = {
+            name: "Mariana",
+            age: 18,
+            gender: "female",
+            haveChildren: false
+        };
+
+        console.log(person);
+        console.log(person.gender);
+        console.log(person[keyT]);
+
+        person.email = "";
+        console.log(person);
+
+        person.parent = {
+            name: "Svitlana"
+        }
+
+        console.log(person['parent'].name);
+
+        const cars = [
+            { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
+            { name: "BMW", models: ["320", "X3", "X5"] },
+            { name: "Fiat", models: ["500", "Panda"] }
+        ];
+
+        console.log(cars[0]);
+
+
+        // ref vs primitive
+
+        let a = 100;
+        let b = a;
+        b = b + 10;
+        console.log(b);
+        console.log(a);
+
+        const user = {name: "Vasya"};
+        const user2 = user;
+        user2.age = 18;
+        user.gender ='male'
+
+        console.log(user);
+        console.log(user2);
+
+        console.log(user.name.length)
+
+        const arr = [
+            {
+                username: "johndoe",
+                name: "John Doe",
+                password: "password123"
+            },
+            {
+                username: "janedoe",
+                name: "Jane Doe",
+                password: "password456"
+            },
+            {
+                username: "mikesmith",
+                name: "Mike Smith",
+                password: "password789"
+            },
+            {
+                username: "sarahjones",
+                name: "Sarah Jones",
+                password: "password321"
+            },
+            {
+                username: "tomjohnson",
+                name: "Tom Johnson",
+                password: "password654"
+            },
+            {
+                username: "emilydavis",
+                name: "Emily Davis",
+                password: "password987"
+            },
+            {
+                username: "peterparker",
+                name: "Peter Parker",
+                password: "password111"
+            },
+            {
+                username: "marywilliams",
+                name: "Mary Williams",
+                password: "password222"
+            },
+            {
+                username: "lucasbrown",
+                name: "Lucas Brown",
+                password: "password333"
+            },
+            {
+                username: "oliviamartin",
+                name: "Olivia Martin",
+                password: "password444"
+            }
+        ]
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i].password);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

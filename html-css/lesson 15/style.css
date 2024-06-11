@@ -1,0 +1,12 @@
+:root {
+    --primary-color: #f9bf29;
+    --secondary-color: black;
+    --third-color: #3b5d50;
+    --white-color: #ffff;
+}
+
+
+html, body  {
+    box-sizing: border-box;
+    margin: 0;
+}

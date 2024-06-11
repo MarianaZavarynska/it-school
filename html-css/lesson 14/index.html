@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+
+    <style>
+        form>input,
+        label {
+            display: block;
+            margin: 20px;
+        }
+
+        input[type="email"] {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="mailto:mariana.zavarynska@gmail.com" enctype="text/plain">
+        <input type="date" name="date-container" id="date-container" placeholder="name">
+        <input type="color" name="color-container" id="color-container">
+        <label for="meeting-time">Choose a time for your appointment:</label>
+
+        <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30"
+            min="2018-06-07T00:00" max="2028-06-14T00:00" />
+        <input type="text" name="text-container" id="text-container" placeholder="Write text!">
+        <input type="file" name="file-container" id="file-container">
+        <input type="email" name="email-container" id="" placeholder="Your Email">
+
+        <label for="radio-container">Gender:
+            <div>
+                <input type="radio" name="radio-container" id="" value="Male"> Male
+            </div>
+            <div>
+                <input type="radio" name="radio-container" id="" value="Female"> Female
+            </div>
+        </label>
+
+
+        <label for="checkbox-container">checkbox
+            <input type="checkbox" name="checkbox-container" id="" value="condition">
+        </label>
+
+
+        <input type="range" name="range-container" id="" min="0" max="11">
+
+        <input type="submit" value="Submit">
+        <input type="search" name="search" id="">
+    </form>
+</body>
+
+</html>
