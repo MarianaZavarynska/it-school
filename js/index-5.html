@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+
+    <script>
+
+        //function!!!
+        // document.write('<ul>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('</ul>');
+
+
+        // document.write('<ul>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('<li>item</li>');
+        // document.write('</ul>');
+
+        // let b = 10;
+
+        // function foo(a, b, c ='default') {
+        //     document.write('<ul>');
+        //     document.write(`<li>${a}</li>`);
+        //     document.write(`<li>${b}</li>`);
+        //     document.write(`<li>${c}</li>`);
+        //     // document.write('<li>a</li>');
+        //     // document.write('<li>a</li>');
+        //     // document.write('<li>a</li>');
+        //     // document.write('<li>a</li>');
+        //     // document.write('<li>a</li>');
+        //     // document.write('</ul>');
+        // }
+
+        // // console.log(foo());
+
+
+        // foo(10, 1, 50)
+
+        // function list(limit) {
+        //     document.write('<ul>');
+
+        //     for(let i = 0; i < limit; i++){
+        //         document.write(`<li>item ${i+1}</li>`);
+        //     }
+
+        //     document.write('</ul>');
+        // }
+
+        // list(5);
+
+        // list(20);
+
+        //return!!!
+
+        // function foo2(a, b) {
+
+        //     if (a > 0) {
+        //         return a;
+        //     }
+
+        //     if (a < 0) {
+        //         const sum = a + b;
+        //         console.log(sum);
+        //         return 'success';
+        //     }
+
+        //     return 'nothing'
+        // }
+
+        // console.log(foo2(0, 50));
+
+        // let sum = foo2(1,2);
+
+        // console.log(sum);
+
+
+
+
+        // arguments!!!
+
+        // function foo3() {
+        //     console.log(arguments[arguments.length-1])
+        // }
+
+        // foo3(1, 2, 3);
+
+        // foo3('a', 'b', 'c', 4)
+
+
+
+
+        // hosting and function in function
+
+        // function check(a, b) {
+        //     // if (typeof a === 'number' && typeof b === 'number') {
+        //     //     return true;
+        //     // } else {
+        //     //     return false
+        //     // }
+        //     return typeof a === 'number' && typeof b === 'number';
+        // }
+        // const result = calc('+', 3, 5);
+
+        function calc(action, a, b) {
+            // if(action === '+' && typeof a === 'number' && typeof b === 'number'){
+            //     return a + b;
+            // } else if (action === '-'){
+            //     return a - b;
+            // } else if (action === '*') {
+            //     return a * b;
+            // }
+
+            // if (typeof a === 'number' && typeof b === 'number') {
+            //     if (action === '+') {
+            //         return a + b;
+            //     } else if (action === '-') {
+            //         return a - b;
+            //     } else if (action === '*') {
+            //         return a * b;
+            //     }
+            // }
+
+            // if (!(typeof a === 'number') && !(typeof b === 'number')) {
+            //     return;
+            // }
+
+            // if (action === '+') {
+            //     return a + b;
+            // } else if (action === '-') {
+            //     return a - b;
+            // } else if (action === '*') {
+            //     return a * b;
+            // }
+
+            if (action === '+' && check(a, b)) {
+                return a + b;
+            } else if (action === '-' && check(a, b)) {
+                return a - b;
+            } else if (action === '*' && check(a, b)) {
+                return a * b;
+            }
+
+            return 'nothing'
+        }
+
+        // const result = calc('+', 3, 5);
+
+
+
+        // console.log(result);
+
+        function check(a, b) {
+            // if (typeof a === 'number' && typeof b === 'number') {
+            //     return true;
+            // } else {
+            //     return false
+            // }
+            return typeof a === 'number' && typeof b === 'number';
+        }
+
+        // function expresion!!!
+
+
+        // const foo4 = function(){
+        //     console.log('foobar')
+
+        // }
+
+        // foo4()
+
+        // arrow function!!!
+
+        // const arrow = (a, b) => typeof a === 'number' || typeof b === 'number';
+
+
+
+        // console.log(arrow(11, 'a'))
+
+
+        // IIFE !!!
+
+        // (function () {
+        //     // var foo = 3;
+        //     console.log(3);
+        // })();
+
+        // rest arguments!!!
+
+        // function foo5(param, ...rest) {
+        //     console.log(param, rest)
+        // }
+
+        // foo5(4, 5, 6, 7)
+
+
+        // recurcion !!!!
+
+        let a = 0;
+
+        function rec(i, limit) {
+            console.log("text")
+            i++;
+
+            if(i > limit) return;
+
+            rec(i, limit)
+        }
+
+        rec(a, 10)
+
+
+        // function in object
+
+        const user = {
+            name: 'Vasya',
+            age: 18,
+            sayHello: () => {
+                console.log(`${user.name} say Hello everybody!`)
+            }
+        }
+
+        user.sayHello()
+
+        // function with primitive and references type of data !!!
+
+        let asd = {age: 11};
+
+        function foo6 (a){
+            a.age = 15;
+
+            console.log(a)
+
+        }
+
+        foo6(asd)
+        console.log(asd)
+
+
+    </script>
+
+</body>
+
+</html>
