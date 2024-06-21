@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const valid = (eml1) => {
+        //     if (eml1.includes('@') && eml1.includes('.')) {
+
+        //         // 1. const index @; 4
+        //         // 2. const index dot; 6
+        //         // 3. порівняти if/else 6 - 4 >= 2
+
+        //     } else {
+        //         return false;
+        //     }
+        // }
+
+        // const username = 'Lilya'
+
+        // const user = {
+        //     username: 'Taras',
+        //     age: 21,
+
+        //     greeting: function () {
+        //         return `${this.username}` + ' said hello!'
+        //     },
+
+        //     wife: {
+        //         username: 'Lilya',
+        //         age: 30,
+
+        //         greeting: function () {
+        //             return `${this.username}` + ' said hello!'
+        //         }
+        //     },
+
+        // }
+
+
+        // const user = {
+        //     username: 'Taras',
+        //     age: 21,
+
+        //     greeting: () => {
+        //         console.log(this);
+        //         return `${user.username}` + ' said hello!'
+        //     },
+
+        //     wife: {
+        //         username: 'Lilya',
+        //         age: 30,
+
+        //         greeting: () => {
+        //             console.log(this);
+        //             return `${this.username}` + ' said hello!'
+        //         }
+        //     },
+
+        // }
+
+
+        // function name(params) {
+        //     const username = 'Kolya';
+        //     const greeting = () => console.log(this);
+
+        //     greeting();
+
+        // }
+        // name();
+
+        // console.log(user.greeting());
+        // console.log(user.wife.greeting());
+
+
+        // function User(username, age) {
+        //     this.username = username;
+        //     this.age = age;
+        // }
+
+        // const user1 = new User("Taras", 21);
+        // console.log(user1);
+
+        // const user2 = new User('Olya', 20);
+        // console.log(user2);
+
+        // const user3 = new User('Kolya', 60);
+        // console.log(user3);
+
+        class User {
+
+            constructor(username, age) {
+                this.username = username;
+                this.age = age;
+            }
+
+            greeting = () => {
+                console.log(this);
+                return 'Hi!!' + this.username
+            }
+
+        }
+
+        const usr = new User('Lesya', 25);
+
+        console.log(usr.greeting());
+
+        // class SuperUser {
+
+        //     constructor(username, age, hasAccess) {
+        //         this.username = username;
+        //         this.age = age;
+        //         this.access = hasAccess;
+        //     }
+
+        //     greeting = () => {
+        //         console.log(this);
+        //         return 'Hi!!' + this.username
+        //     }
+
+        // }
+
+
+        class SuperUser extends User {
+
+            constructor(username, age, hasAccess) {
+                super(username, age);
+
+                this.access = hasAccess;
+            }
+
+        }
+
+
+        const spr = new SuperUser("Vasya", 25, true);
+        console.log(spr);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
