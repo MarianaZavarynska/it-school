@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+
+    <style>
+        .blue {
+            color: blue
+        }
+
+        .paragraph {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="paragraph blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos non officia laudantium
+        sequi similique. Consequatur doloribus nostrum optio atque, ab possimus necessitatibus deleniti quisquam
+        reprehenderit! Quo optio recusandae similique et?</p>
+
+    <!-- <p class="paragraph" id="second"><b>Strong</b>
+        Lorem ipsum dolor sit.</p> -->
+
+    <div  style="border: 1px solid red">
+        <p class="paragraph" id="second"><b>Strong</b>
+            Lorem ipsum dolor sit.</p>
+
+    </div>
+
+    <form action="" method="post" name="form1">
+        <input type="email" name="Email" id="email">
+        <input type="button" value="Submit">
+    </form>
+
+    <script>
+
+        // // 1. Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+        // // створити пустий масив, наповнити його 10 об'єктами new User(....)
+
+        // // Ім’я функції-конструктора повинно починатися з великої літери.
+        // // Функції-конструктори повинні виконуватися лише з оператором "new"
+
+        // function User(id, name, surname, email, phone) {
+        //     this.id = id;
+        //     this.name = name;
+        //     this.surname = surname;
+        //     this.email = email;
+        //     this.phone = phone;
+        //     // Створюється новий порожній об’єкт, якому присвоюється this.
+        //     // Виконується тіло функції. Зазвичай воно модифікує this, додає до нього нові властивості.
+        //     // Повертається значення this.
+        // };
+        // const usersArr = [];
+        // for (let i = 1; i <= 10; i++) {
+        //     const newUser = new User(i, `name${i}`, `surname${i}`, `email${i}`, `phone${i}`);
+        //     usersArr.push(newUser);
+        // }
+        // console.log(usersArr);
+
+
+
+        // // 2. Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+        // const filterUsers = usersArr.filter(user => user.id % 2 === 0)
+        // console.log(filterUsers);
+
+        // // 3. Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort) (спадання (b.id-a.id))
+        // // const sortUsers = usersArr.sort((a, b) => a.id - b.id)
+        // const sortUsers = usersArr.sort((a, b) => b.id - a.id)
+        // console.log(sortUsers);
+
+        // // 4. створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+        // // створити пустий масив, наповнити його 10 об'єктами Client
+
+        // // створення класу: 1) Використовуйте ключове слово class, щоб створити клас. 2) Завжди додавайте метод із назвою constructor()
+        // class Client {
+        //     constructor(id, name, surname, email, phone, order) {
+        //         this.id = id;
+        //         this.name = name;
+        //         this.surname = surname;
+        //         this.email = email;
+        //         this.phone = phone;
+        //         this.order = order;
+        //     }
+        // }
+        // const clientsArr = [];
+        // for (let i = 1; i <= 10; i++) {
+        //     const newClient = new Client(i, `name${i}`, `surname${i}`, `email${i}`, `phone${i}`, [`order_1 ${i}`, `order_2 ${i}`]);
+        //     // [поле є масивом зі списком товарів ]
+        //     clientsArr.push(newClient);
+        // }
+        // console.log(clientsArr);
+        // // 5. Взяти масив з  Client[] з попереднього завдання, та "сортувати" його по кількості товарів в полі order (sort)
+        // const sortClient = clientsArr.sort((a, b) => a.order.lenght - b.order.lenght);
+        // console.log(sortClient);
+
+        // 6.Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+        // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+        // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+        // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+        // -- changeYear (newValue) - змінює рік випуску на значення newValue
+        // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+
+        // function Car(model, manufacturer, year, maxSpeed, engineCapacity) {
+        //     this.model = model;
+        //     this.manufacturer = manufacturer;
+        //     this.year = year;
+        //     this.maxSpeed = maxSpeed;
+        //     this.engineCapacity = engineCapacity;
+        //     this.drive = function () {
+        //         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
+        //     }
+        //     this.info = function () {
+        //         for (const key in this) {
+        //             if (typeof this[key] !== "function") {
+        //                 console.log(`${key} - ${this[key]} `);
+        //             }
+        //         }
+        // console.log(`модель: ${this.model}`);
+        // console.log(`виробник: ${this.manufacturer}`);
+        // console.log(`рік випуску: ${this.year}`);
+        // console.log(`максимальна швидкість: ${this.maxSpeed}`);
+        // console.log(`об'єм двигуна: ${this.engineCapacity}`);
+        // }
+        //     this.increaseMaxSpeed = function (newSpeed) {
+        //         this.maxSpeed = newSpeed;
+        //     }
+        //     this.changeYear = function (newValue) {
+        //         this.year = newValue;
+        //     }
+        //     this.addDriver = function (driver) {
+        //         this.driver = driver;
+        //     }
+        // }
+        // const newCar = new Car(`VW-B6`, `VAG`, `2008`, `200`, `2.0`);
+        // newCar.info();
+        // newCar.drive();
+        // newCar.info();
+        // newCar.increaseMaxSpeed(220);
+        // newCar.changeYear(2010);
+        // newCar.addDriver({ name: 'Jacki Chan', age: '70' });
+        // console.log(newCar);
+
+        // // 7. (Те саме, тільки через клас)
+        // // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+        // // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+        // // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+        // // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+        // // -- changeYear (newValue) - змінює рік випуску на значення newValue
+        // // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+
+        // class Car2 {
+        //     constructor(model, manufacturer, year, maxSpeed, engineCapacity) {
+        //         this.model = model;
+        //         this.manufacturer = manufacturer;
+        //         this.year = year;
+        //         this.maxSpeed = maxSpeed;
+        //         this.engineCapacity = engineCapacity;
+        //     }
+
+        //     drive () {
+        //         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
+        //     }
+
+        //     info = () => {
+        //         console.log(`модель: ${this.model}`);
+        //         console.log(`виробник: ${this.manufacturer}`);
+        //         console.log(`рік випуску: ${this.year}`);
+        //         console.log(`максимальна швидкість: ${this.maxSpeed}`);
+        //         console.log(`об'єм двигуна 2: ${this.engineCapacity}`);
+        //     }
+
+        //     increaseMaxSpeed (newSpeed) {
+        //         this.maxSpeed = newSpeed;
+        //     }
+
+        //     changeYear (newValue) {
+        //         this.year = newValue;
+        //     }
+
+        //     addDriver (driver) {
+        //         this.driver = driver;
+        //     }
+
+        // }
+
+        // const newCar2 = new Car2('Amarok', 'VAG', '2010', '150', '2.0');
+        // console.log(newCar2);
+        // newCar2.drive();
+        // newCar2.info();
+        // newCar2.increaseMaxSpeed(220);
+        // newCar2.changeYear(2015);
+        // newCar2.addDriver({ name: 'Bruce Willis', age: '69' });
+        // console.log(newCar2);
+
+        // // 8. створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+        // // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+        // // За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+        // // Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+
+        // class Cinderella {
+        //     constructor (name, age, footSize){
+        //         this.name = name;
+        //         this.age = age;
+        //         this.footSize = footSize;
+        //     }
+        // }
+        // const ciderellaArr = [
+        //     new Cinderella ('Vika', '17', '35'),
+        //     new Cinderella ('Anna', '19', '37'),
+        //     new Cinderella ('Mary', '25', '44'),
+        //     new Cinderella ('Yoko', '37', '39'),
+        //     new Cinderella ('Helena', '18', '34'),
+        //     new Cinderella ('Helga', '16', '33'),
+        //     new Cinderella ('Sheron', '55', '38'),
+        //     new Cinderella ('Mary', '27', '40'),
+        //     new Cinderella ('Yoko', '30', '36'),
+        //     new Cinderella ('Helena', '22', '41')
+        // ];
+        // class Prince {
+        //     constructor (name, age, shoeFound){
+        //         this.name = name;
+        //         this.age = age;
+        //         this.shoeFound = shoeFound;
+        //     }
+        // }
+        // const prince = new Prince ('Fredreh fon Luksemburg', '25', '37');
+
+        // const merriage = ''
+
+
+
+        // console.log(Math.floor(Math.random() * 2000))
+
+
+
+        //DOM 
+
+        //document
+        // console.log(document);
+        // console.log(document.body);
+
+        //bytag ---> псевдомасив 
+
+        // const el = document.body.getElementsByTagName('p')
+        // console.log(el); //HTMLColection
+
+        // el.map((i)=> console.log(i) )
+        // el.forEach((el)=> console.log(el))
+
+        // for (let index = 0; index < el.length; index++) {
+        //     const element = el[index];
+        //     console.log(element);
+
+        // }
+
+        //byclass ---> псевдомасив 
+
+        const elList = document.body.getElementsByClassName('paragraph')
+        // console.log(elList); //HTMLColection
+        // console.log(elList[1].innerHTML); // tag + text
+        // console.log(elList[1].innerText); //text
+
+        console.log(elList[1].classList);
+        // elList[1].classList.add('blue')
+        // console.log(elList[1]);
+
+        // elList[1].classList.remove('blue')
+
+
+
+        // elList[0].classList.toggle('blue')
+
+        // elList[0].classList.contains('blue')
+
+        // console.log(elList[1].classList.contains('blue'));
+
+
+
+        //by ID ----> document.getElementById
+
+        // const el = document.getElementById('second');
+        // console.log(el);
+
+        // const container = document.body.getElementsByTagName('div')[0];
+
+        // console.log( container.getElementById('p')); //Errror 
+
+
+        //children vs NodeList
+
+        console.log(document.body.children);  //HTMLColection of tags
+        console.log(document.body.childNodes); // Node вузли
+
+        //querySelector ; querySelectorAll
+
+        // console.log(document.body.querySelector('.blue'));
+        // console.log(document.body.querySelector('#second'));
+        // console.log(document.body.querySelectorAll('.paragraph')); // Node вузли
+
+        //Form API
+
+        // console.log(document.forms.form1);
+
+
+
+
+        //create elem
+
+        // 1. 
+        const container = document.body.getElementsByTagName('div')[0];
+
+        const newEl = document.createElement('div');
+        // newEl.innerText= '<b>Test</b>';
+        newEl.innerHTML= '<b>Test</b>';
+
+        newEl.className = 'blue';
+
+        container.appendChild(newEl);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
