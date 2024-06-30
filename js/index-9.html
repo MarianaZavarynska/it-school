@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <style>
+        .target-element {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="target-element"></div> -->
+
+    <form action="" name="form1">
+        <input type="email" name="email" value="">
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+
+    <script>
+
+        //HOMEWORK!!!
+
+        // 6. Цикл в циклі
+        // - Є масив coursesArray котрий лежить в arrays.js (на цей момент ти вже знаєте де він знаходиться)
+        // Створити для кожного елементу масиву свій блок, блок розділити блоками,
+        //  в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
+
+        let coursesArray = [
+            {
+                title: 'JavaScript Complex',
+                monthDuration: 5,
+                hourDuration: 909,
+                modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+            },
+            {
+                title: 'Java Complex',
+                monthDuration: 6,
+                hourDuration: 909,
+                modules: ['html',
+                    'css',
+                    'js',
+                    'mysql',
+                    'mongodb',
+                    'angular',
+                    'aws',
+                    'docker',
+                    'git',
+                    'java core',
+                    'java advanced']
+            },
+            {
+                title: 'Python Complex',
+                monthDuration: 6,
+                hourDuration: 909,
+                modules: ['html',
+                    'css',
+                    'js',
+                    'mysql',
+                    'mongodb',
+                    'angular',
+                    'aws',
+                    'docker',
+                    'python core',
+                    'python advanced']
+            },
+            {
+                title: 'QA Complex',
+                monthDuration: 4,
+                hourDuration: 909,
+                modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+            },
+            {
+                title: 'FullStack',
+                monthDuration: 7,
+                hourDuration: 909,
+                modules: ['html',
+                    'css',
+                    'js',
+                    'mysql',
+                    'mongodb',
+                    'react',
+                    'angular',
+                    'aws',
+                    'docker',
+                    'git',
+                    'node.js',
+                    'python',
+                    'java']
+            },
+            {
+                title: 'Frontend',
+                monthDuration: 4,
+                hourDuration: 909,
+                modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+            }
+        ];
+
+
+        // for ( const course of coursesArray ) {
+        //     const courseDiv = document.createElement('div');
+        //     document.body.appendChild( courseDiv );
+        //     courseDiv.style.border = '2px solid red';
+        //     courseDiv.style.width = '100%';
+        //     courseDiv.style.margin = '10px';
+
+        //     const titleEle = document.createElement('div');
+        //     titleEle.textContent = course.title;
+        //     courseDiv.appendChild( titleEle);
+        //     titleEle.style.border = '1px solid blue';
+        //     titleEle.style.margin = '5px';
+        //     titleEle.style.textAlign = 'center';
+
+        //     const monthDurationEle = document.createElement('div');
+        //     monthDurationEle.textContent = ` Duration ${course.monthDuration} months, ${course.hourDuration} hours`;
+        //     courseDiv.appendChild( monthDurationEle );
+        //     monthDurationEle.style.border = '1px solid blue';
+        //     monthDurationEle.style.margin = '5px';
+        //     const moduleList = document.createElement('ul');
+        //     moduleList.style.border = '1px solid blue';
+        //     moduleList.style.margin = '5px';
+        //     for ( const module of course.modules ) {
+        //         const moduleLi = document.createElement('li');
+        //         moduleLi.textContent = module;
+        //         moduleList.appendChild( moduleLi );
+        //     }
+        //     courseDiv.appendChild( moduleList );
+        //     console.log(courseDiv);            
+        // };
+
+
+        //EVENTS !!!! (Події)
+
+        // let myArr = ['Main', 'Products', 'About us', 'Contacts'];
+        // let ul = document.createElement('ul');    //ств. ul
+        // for (let i = 0; i < myArr.length; i++) {
+        //     let li = document.createElement('li');
+        //     li.textContent = `<li>${myArr[i]}</li>`;
+        //     ul.appendChild(li);
+        // } // проходимо по масиву і та ств. li для кожного елемен.
+        // document.body.appendChild(ul);
+
+        // // innerHTML
+        // let myArrInner = ['Main', 'Products', 'About us', 'Contacts'];
+        // let ulInner = document.createElement('ul');
+        // for (let i = 0; i < myArrInner.length; i++) {
+        //     ulInner.innerHTML += `<mark>${myArrInner[i]}</mark> Text <i>Italian</i>`;
+        // };
+        // document.body.appendChild(ulInner);
+
+        const targetEl = document.body.getElementsByClassName('target-element')[0];
+        // console.log(targetEl);
+
+        // targetEl.onclick = function () {
+        //     console.log('click');
+        // }
+
+        // targetEl.ondblclick = (e) => {
+        //     console.log('click 2', this, e.target);
+        // }
+
+        // targetEl.addEventListener('click', function(){
+        //     console.log('click');
+        // })
+
+        // targetEl.addEventListener('click', function(){
+        //     console.log('click 2');
+        // })
+
+        // targetEl.onmouseover = function (event) {
+        //     // console.log(event);
+        //     const x = event.clientX;
+        //     const y = event.clientY;
+        //     // console.log(event.clientX, event.clientY);
+        //     // console.log(event.target, this);
+        //     this.style.backgroundColor = `rgb(${x}, ${y}, ${x-y})`
+        // }
+
+        // targetEl.addEventListener('dblclick', () => {
+        //     console.log(this);
+        // })
+
+        // document.addEventListener('keypress', (e) => {
+        //     console.log(e.key);
+        // })
+
+        const fEl = document.forms.form1;
+        // const emEl = fEl.getElementsByTagName('input')[0];
+
+        // console.log(emEl);
+
+        fEl.onsubmit = function (e){
+            e.preventDefault();
+            console.log(e.target);
+        }
+
+        fEl.email.oninput = function (e){
+            // console.log(e.target.value);
+            console.log("input", this.value);
+        }
+
+
+        fEl.email.onchange = function (e){
+            // console.log(e.target.value);
+            console.log("chnage", this.value);
+        }
+
+
+
+
+        // emEl.onfocus = function (e){
+        //     this.style.border='1px solid red'
+        // }
+
+
+    </script>
+</body>
+
+</html>
