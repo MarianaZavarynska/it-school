@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <div id="numb"></div> -->
+
+    <form name="f1">
+        <input type="date" name="date" id="date">
+        <button type="submit">Sub</button>
+    </form>
+
+    <script>
+
+        //  https://jsonplaceholder.typicode.com/
+
+        //  API
+        //  JSONPlaceholder https://jsonplaceholder.typicode.com/
+        //  end-poins
+        //  fetch
+
+        // GET
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        //     .then(response => response.json())
+        //     .then(users => {
+        //         const container = document.createElement('ul');
+        //         document.body.appendChild(container);
+
+        //         users.forEach(user => {
+        //             const liItem = document.createElement('li');
+        //             liItem.innerText = user.name;
+        //             container.appendChild(liItem);
+        //         });
+
+        //     })
+
+        // привіт Вася! GET  дай мені кави
+
+        // привіт Вася! POST я привіз каву 
+
+
+        //  json method
+        //  add to document
+        //  http methods
+        //  GET
+
+
+        //  POST
+
+        // fetch('https://jsonplaceholder.typicode.com/posts', {
+        //     method: 'PUT',
+        //     body: JSON.stringify({
+        //         title: 'foo',
+        //         body: 'bar',
+        //         userId: 1,
+        //     }),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
+
+        //  PUT
+        //  PATCH
+
+      
+      //   try catch  finally
+        // try {
+        //     console.log('start')
+        //     console.log(a);
+        // } catch (err) {
+        //     console.error(err);
+
+        // } finally {
+
+        //     console.log('end');
+        // }
+
+        //  Date
+        const testDate = new Date();
+
+        // console.log(testDate.getDate());
+        // console.log(testDate.getSeconds());
+        // console.log(testDate.getTime());
+        // console.log(testDate.getDay());
+        // console.log(testDate.getMonth());
+
+        // function log() {
+        //     const start = new Date().getMilliseconds();
+        //     console.log('start', start);
+        //     for (let index = 0; index < 1000000; index++) {}
+
+        //     const end = new Date().getMilliseconds();
+
+        //     console.log('end',end);
+        //     console.log(end - start);
+            
+        // }
+
+        // log()
+
+
+        // console.log(Date.now());
+
+        //   input type='date'
+
+        const el = document.getElementById('date')
+
+        el.addEventListener('input', (e) => {
+            e.preventDefault();
+
+            console.log(e.target.value);
+            console.log(new Date(e.target.value).getFullYear());
+        })
+
+
+        //   es6
+        //   destruct
+        //   copy Obj
+        //   spred
+        //   array spred
+        //   rename 
+    </script>
+
+</body>
+
+</html>
