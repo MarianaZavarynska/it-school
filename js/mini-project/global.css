@@ -1,0 +1,45 @@
+body {
+    background-color: #093664; /* Світло-сірий фон */
+    padding: 20px;
+    text-align: center;
+    color: white;
+}  
+
+.btn-with-icon {
+    background-image: url('/img/preview-removebg-preview.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px; /* Відступ для тексту після іконки */
+}  
+
+/* USERS PAGE */
+.width-30 {
+    width: 32%;
+}
+    
+.user-link {
+    margin-left: 10px; /* Відступ перед Details */
+}
+
+/* Стили для планшетів */
+@media (max-width: 768px) {
+    body {
+        background-color: #0a4a8a; /* Зміна кольору фону для планшетів */
+        padding: 15px;
+    }
+    h3, h4, p {
+        font-size: 1.2em; /* Зменшення розміру шрифту для планшетів */
+    }
+}
+
+/* Стилi для мобільних пристроїв */
+@media (max-width: 576px) {
+    body {
+        background-color: #0b5bb1; /* Зміна кольору фону для мобільних пристроїв */
+        padding: 10px;
+    }
+    h3, h4, p {
+        font-size: 1em; /* Зменшення розміру шрифту для мобільних пристроїв */
+    }
+}
